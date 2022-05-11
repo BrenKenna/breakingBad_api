@@ -21,8 +21,9 @@ done
 ionic g page pages/tabs
 
 
-# Create service
-ionic g service services/api
+# Create services
+ionic g service services/queryAPI/queryAPI
+ionic g service services/favourites/favourites
 
 
 # Serve app
