@@ -3,7 +3,7 @@
 
 Design plan:
 
-	1. App skeleton with core service and possible favourites
+1. App skeleton with core service and possible favourites
 
     a). Mostly there with tabs, navigation & pages
 
@@ -17,8 +17,23 @@ Design plan:
 
 3. Base theme off of the "***Breaking Bad***" theme dark greens, white font on black.
 
-4. Store favourites in a map { "PageX": [ 1, 4,  5], "PageY": [ 6, 7, 9] }
+4. Store favourites in a map:
+
+    ```javascript
+    {
+    	"PageX": [
+    		1, 4, 5
+    	],
+    	
+    	"PageY": [ 
+    		6, 7, 9
+    	]
+    }
+    ```
+
+    
+
 
 5. Follow & try implement the pagination from the Sports Store from chapter 7
 
-​		*https://github.com/Apress/pro-angular-9*
+​	*https://github.com/Apress/pro-angular-9*
