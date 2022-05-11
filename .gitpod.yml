@@ -1,3 +1,3 @@
 tasks:
   - name: Installing Ionic 5 & Angular CLI
-  - init: cd application && npm i -D -E @angular/cli && npx --yes ionic serve
+  - init: cd application && npm i -gED @angular/cli @ionic/storage-angular && npx --yes ionic serve
