@@ -6,6 +6,13 @@
 # 
 ######################################
 
+# Packages: Ionic, Cordova & Angular storage module
+npm i -g ionic
+npm i -g cordova
+ionic cordova plugin add cordova-sqlite-storage
+npm i @ionic/storage-angular
+
+
 # Start blank project
 ionic start breakingBad blank --type=angular
 

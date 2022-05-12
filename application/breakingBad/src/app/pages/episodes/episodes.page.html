@@ -1,9 +1,17 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>Episodes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-list>
+
+    <!-- For loop not working somehow, item is embedded in HTML page but no data & the fetch method works fine -->
+    <ion-item button detail lines="inset" *ngFor="let episode of (episodes | async)?.results" (click)="openDetails(episode)">
+      {{ "S" + episode?.season + "E" + episode?.episode + ": " + episode?.title}}
+    </ion-item>
+  </ion-list>
 
 </ion-content>

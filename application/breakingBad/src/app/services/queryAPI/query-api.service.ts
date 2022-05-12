@@ -5,7 +5,37 @@ import { HttpClient } from "@angular/common/http";
   providedIn: 'root'
 })
 
+
+/**
+ * Class to encapsulate consuming the breaking bad API and 
+ * aid in routing results to target pages.
+ */
 export class QueryAPIService {
+
+  // Attribute to hold paths,
+  //  easier for now instead of another service
+  private _pathsMap = {
+
+    "Episodes": {
+      "Tab": `/tabs/episodes`,
+      "API": `https://www.breakingbadapi.com/api/episodes`
+    },
+
+    "Characters": {
+      "Tab": `/tabs/characters`,
+      "API": `https://www.breakingbadapi.com/api/characters`
+    },
+
+    "Quotes": {
+      "Tab": `/tabs/quotes`,
+      "API": `https://www.breakingbadapi.com/api/quotes`
+    },
+
+    "Deaths": {
+      "Tab": `/tabs/quotes`,
+      "API": `https://www.breakingbadapi.com/api/death-count`
+    }
+  };
 
   /**
    * Construct with restricted http client attribute
@@ -94,7 +124,35 @@ export class QueryAPIService {
    * 
    * @returns Promise
    */
-  getEpisodes(id) {
+  getEpisode(id) {
     return this.http.get(`https://www.breakingbadapi.com/api/episodes/${id}`);
+  }
+
+
+  /**
+   * Fetch the routing tab for page
+   * 
+   * @param key - Episode, Characters, Quotes, Deaths
+   * @returns Tab path for this application
+   */
+  getTabPath(key) {
+    if ( key in this._pathsMap ) {
+      return this._pathsMap[key]['Tab'];
+    }
+    return null;
+  }
+
+
+  /**
+   * Fetch the API endpoint for page
+   * 
+   * @param key - Episode, Characters, Quotes, Deaths
+   * @returns Tab path for this application
+   */
+   getAPIPath(key) {
+    if ( key in this._pathsMap ) {
+      return this._pathsMap[key]['API'];
+    }
+    return null;
   }
 }
