@@ -1,9 +1,51 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>characters-details</ion-title>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start" defaultHref="/tabs/(characters:id)">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ character?.name }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="unfavouriteCharacter()" *ngIf="isFavourite">
+        <ion-icon name="star" slot="icon-only" color="secondary"></ion-icon>
+      </ion-button>
+      <ion-button (click)="favouriteCharacter()" *ngIf="!isFavourite">
+        <ion-icon name="star-outline" slot="icon-only" color="secondary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
-</ion-header>
+  </ion-header>
+ 
+<ion-content padding="">
 
-<ion-content>
+  <ion-card *ngIf="character" class="episode-card">
+
+    <ion-card-header>Name: {{ character.name }}</ion-card-header>
+ 
+    <ion-item lines="none" class="episode-card">
+      <ion-icon name="snow-outline" slot="start"></ion-icon>
+      Alias: {{ character.nickname }}
+    </ion-item>
+ 
+    <ion-item lines="none" class="episode-card">
+      <ion-icon name="invert-mode-outline" slot="start"></ion-icon>
+      Status: {{ character.status }}
+    </ion-item>
+
+    <ion-item lines="none" class="episode-card">
+      <ion-icon name="people-outline" slot="start"></ion-icon>
+      Performed By: {{ character.portrayed }}
+    </ion-item>
+
+    <ion-item lines="none" class="episode-card">
+      <ion-icon name="resize-outline" slot="start"></ion-icon>
+      Related Shows: {{ character.category }}
+    </ion-item>
+
+    <ion-item lines="none" class="episode-card">
+      <ion-icon name="resize-outline" slot="start"></ion-icon>
+      Appearances: {{ character?.appearance }}
+    </ion-item>
+
+  </ion-card>
 
 </ion-content>

@@ -1,9 +1,18 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>Characters</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-list>
+
+    <!-- For loop not working somehow, item is embedded in HTML page but no data & the fetch method works fine -->
+    <!--   -->
+    <ion-item button detail lines="inset" *ngFor="let character of (characters | async)" (click)="openDetails(character)">
+      {{ character?.name + ", a.k.a " + character?.nickname }}
+    </ion-item>
+  </ion-list>
 
 </ion-content>
