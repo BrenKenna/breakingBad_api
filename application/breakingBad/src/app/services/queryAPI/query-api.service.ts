@@ -51,7 +51,7 @@ export class QueryAPIService {
    * @returns Promise
    */
   fetchCharacters() {
-    return this.http.get(`https://www.breakingbadapi.com/api/characters/`);
+    return this.http.get(`${this._pathsMap.Characters.API}`);
   }
 
 
@@ -61,7 +61,7 @@ export class QueryAPIService {
    * @returns Promise
    */
   fetchEpisodes() {
-    return this.http.get(`https://www.breakingbadapi.com/api/episodes/`);
+    return this.http.get(`${this._pathsMap.Episodes.API}`);
   }
   
 
@@ -71,7 +71,7 @@ export class QueryAPIService {
    * @returns Promise
    */
   fetchQuotes() {
-    return this.http.get(`https://www.breakingbadapi.com/api/quotes`);
+    return this.http.get(`${this._pathsMap.Quotes.API}`);
   }
 
 
@@ -81,7 +81,7 @@ export class QueryAPIService {
    * @returns Promise
    */
   fetchDeathCount() {
-    return this.http.get(`https://www.breakingbadapi.com/api/death-count`);
+    return this.http.get(`${this._pathsMap.Deaths.API}`);
   }
 
 
@@ -93,7 +93,7 @@ export class QueryAPIService {
    */
   getDeath(name) {
     name = name.replace(" ", "+");
-    return this.http.get(`https://www.breakingbadapi.com/api/death-count?name=${name}`);
+    return this.http.get(`${this._pathsMap.Deaths.API}/?name=${name}`);
   }
 
 
@@ -104,7 +104,7 @@ export class QueryAPIService {
    * @returns 
    */
   getCharacter(id) {
-    return this.http.get(`https://www.breakingbadapi.com/api/characters/${id}`);
+    return this.http.get(`${this._pathsMap.Characters.API}/${id}`);
   }
 
 
@@ -115,7 +115,7 @@ export class QueryAPIService {
    * @returns Promise
    */
   getQuote(id) {
-    return this.http.get(`https://www.breakingbadapi.com/api/quotes/${id}`);
+    return this.http.get(`${this._pathsMap.Quotes.API}/${id}`);
   }
 
 
@@ -125,7 +125,7 @@ export class QueryAPIService {
    * @returns Promise
    */
   getEpisode(id) {
-    return this.http.get(`https://www.breakingbadapi.com/api/episodes/${id}`);
+    return this.http.get(`${this._pathsMap.Episodes.API}/${id}`);
   }
 
 

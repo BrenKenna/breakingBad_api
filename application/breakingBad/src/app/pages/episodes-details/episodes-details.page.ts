@@ -37,8 +37,8 @@ export class EpisodesDetailsPage implements OnInit {
    */
   ngOnInit() {
     this.episodeID = this.activatedRoute.snapshot.paramMap.get('id');
-    this.queryAPI.getEpisode(`${this.apiPath}/${this.episodeID}`).subscribe(res => {
-      this.episode = res;
+    this.queryAPI.getEpisode(`${this.episodeID}`).subscribe(res => {
+      this.episode = res[0];
     });
 
     this.favServ.isFavourited(this.episodeID, this._STORAGE_CONTEXT).then(isFav => {

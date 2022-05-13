@@ -50,7 +50,9 @@ export class EpisodesPage implements OnInit {
     // Sanity check data is returned
     this.episodes.subscribe(data => {
       console.log(
-        `Data from "${this.apiPath}" contains "${data.length}" values and a value will be routed to "${this.tabPath}"`);
+        `Data from "${this.apiPath}" contains "${data.length}" values and a value will be routed to "${this.tabPath}"`
+      );
+      console.dir(data[0], {depth: null});
     });
   }
 
@@ -61,8 +63,7 @@ export class EpisodesPage implements OnInit {
    * @param episode 
    */
   openDetails(episode) {
-    let split = episode.url.split('/');
-    let episodeID = split[split.length-2];
+    let episodeID = episode.episode_id;
     console.log(`Attempting to navigate to: ${this.tabPath}/${episodeID}`);
     this.router.navigateByUrl(`${this.tabPath}/${episodeID}`);
   }

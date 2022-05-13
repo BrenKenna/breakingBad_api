@@ -1,9 +1,11 @@
 <ion-header>
   <ion-toolbar color="dark">
-    <ion-buttons slot="start" defaultHref="/tabs/(episodes:episodes)">
-      <ion-back-button></ion-back-button>
+    <ion-buttons slot="start" defaultHref="/tabs/(episodes:id)">
+      <ion-back-button>
+        
+      </ion-back-button>
     </ion-buttons>
-    <ion-title>{{ "S" + episode?.season + "E" + episode?.episode + ": " + episode?.title}}</ion-title>
+    <ion-title>{{ episode?.series + " S" + episode?.season + "E" + episode?.episode + ": " + episode?.title }}</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="unfavouriteEpisode()" *ngIf="isFavourite">
         <ion-icon name="star" slot="icon-only" color="secondary"></ion-icon>
