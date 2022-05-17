@@ -38,10 +38,6 @@ export class EpisodesPage implements OnInit {
     this.apiPath = queryAPI.getAPIPath("Episodes");
   }
 
-
-  /**
-   * Lazy load promise
-   */
   ngOnInit() {
 
     // Fetch api data and sanity check

@@ -37,12 +37,14 @@ ionic g service services/favourites/favourites
 ioninc serve
 
 
-# Sanity checks on api
+# Work fine: Sanity checks on api
 curl 'https://www.breakingbadapi.com/api/characters' | less
-curl 'https://www.breakingbadapi.com/api/death-count?name=Walter+White'
 curl 'https://www.breakingbadapi.com/api/episodes' | less
 
 
-# Get a bunch of results??? => Just use ids 
-curl 'https://www.breakingbadapi.com/api/quotes?author=Derp+Atron' | less
-curl 'https://www.breakingbadapi.com/api/quotes?author=Jimmy McGill' | less
+# Strange result: Get a bunch of results??? => Just use ids 
+curl 'https://www.breakingbadapi.com/api/quotes?author=Test+String' | less
+
+
+# While main API works querying id does not
+curl 'https://www.breakingbadapi.com/api/deaths/1'

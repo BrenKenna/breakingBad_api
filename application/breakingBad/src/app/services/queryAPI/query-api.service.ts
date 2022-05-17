@@ -32,8 +32,8 @@ export class QueryAPIService {
     },
 
     "Deaths": {
-      "Tab": `/tabs/quotes`,
-      "API": `https://www.breakingbadapi.com/api/death-count`
+      "Tab": `/tabs/deaths`,
+      "API": `https://www.breakingbadapi.com/api/deaths`
     }
   };
 
@@ -80,7 +80,7 @@ export class QueryAPIService {
    * 
    * @returns Promise
    */
-  fetchDeathCount() {
+  fetchDeaths() {
     return this.http.get(`${this._pathsMap.Deaths.API}`);
   }
 
@@ -91,9 +91,8 @@ export class QueryAPIService {
    * @param name 
    * @returns Promise
    */
-  getDeath(name) {
-    name = name.replace(" ", "+");
-    return this.http.get(`${this._pathsMap.Deaths.API}/?name=${name}`);
+  getDeath(id) {
+    return this.http.get(`${this._pathsMap.Deaths.API}/${id}`);
   }
 
 

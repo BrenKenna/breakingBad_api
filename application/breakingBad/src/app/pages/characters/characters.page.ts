@@ -32,10 +32,6 @@ export class CharactersPage implements OnInit {
     this.apiPath = queryAPI.getAPIPath("Characters");
   }
 
-
-  /**
-   * Lazy load promise
-   */
   ngOnInit() {
 
     // Fetch api data and sanity check

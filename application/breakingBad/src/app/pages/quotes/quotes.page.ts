@@ -34,9 +34,6 @@ export class QuotesPage implements OnInit {
     this.apiPath = queryAPI.getAPIPath("Quotes");
   }
 
-  /**
-   * Lazy load promise
-   */
    ngOnInit() {
 
     // Fetch api data and sanity check

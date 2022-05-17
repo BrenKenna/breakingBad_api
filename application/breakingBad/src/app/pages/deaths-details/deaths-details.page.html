@@ -1,9 +1,49 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>deaths-details</ion-title>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start" defaultHref="/tabs/(person:id)">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ person?.death }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="unfavouriteCharacter()" *ngIf="isFavourite">
+        <ion-icon name="star" slot="icon-only" color="secondary"></ion-icon>
+      </ion-button>
+      <ion-button (click)="favouriteCharacter()" *ngIf="!isFavourite">
+        <ion-icon name="star-outline" slot="icon-only" color="secondary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
-</ion-header>
+  </ion-header>
+ 
+<ion-content padding="">
+  <ion-card *ngIf="person" class="episode-card">
 
-<ion-content>
+    <ion-card-header>
+      Name: {{ person?.death }}
+    </ion-card-header>
 
+
+    <ion-item lines="none" class="episode-card">
+      <ion-icon name="snow-outline" slot="start"></ion-icon>
+      Person Responsible: {{ person?.responsible }}
+    </ion-item>
+
+
+    <ion-item lines="none" class="episode-card">
+      <ion-icon name="invert-mode-outline" slot="start"></ion-icon>
+      {{ "Season: "+  person?.season + ", Episode: " + person?.episode }}
+    </ion-item>
+
+
+    <ion-item lines="none" class="episode-card">
+      <ion-icon name="people-outline" slot="start"></ion-icon>
+      Cause: {{ person?.cause }}
+    </ion-item>
+
+
+    <ion-item lines="none" class="episode-card">
+      <ion-icon name="resize-outline" slot="start"></ion-icon>
+      Number of People: {{ person?.number_of_deaths }}
+    </ion-item>
+  </ion-card>
 </ion-content>
