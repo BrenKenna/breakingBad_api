@@ -1,9 +1,18 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>Character Quotes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-list>
+
+    <!-- For loop not working somehow, item is embedded in HTML page but no data & the fetch method works fine -->
+    <!--   -->
+    <ion-item button detail lines="inset" *ngFor="let quote of (quotes | async)" (click)="openDetails(quote)">
+      {{ quote?.author + "-" + quote?.quote_id }}
+    </ion-item>
+  </ion-list>
 
 </ion-content>

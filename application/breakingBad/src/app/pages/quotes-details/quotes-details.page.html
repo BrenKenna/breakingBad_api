@@ -1,9 +1,42 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>quotes-details</ion-title>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start" defaultHref="/tabs/(episodes:is)">
+      <ion-back-button>
+        
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ quote?.author + ": " + quote?.quote_id }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="unfavouriteEpisode()" *ngIf="isFavourite">
+        <ion-icon name="star" slot="icon-only" color="secondary"></ion-icon>
+      </ion-button>
+      <ion-button (click)="favouriteEpisode()" *ngIf="!isFavourite">
+        <ion-icon name="star-outline" slot="icon-only" color="secondary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
-</ion-header>
+  </ion-header>
+ 
+<ion-content padding="">
 
-<ion-content>
+  <ion-card *ngIf="quote" class="episode-card">
 
+    <ion-card-header>Quote ID: {{ quote?.quote_id }}</ion-card-header>
+ 
+    <ion-item lines="none" class="episode-card">
+      <ion-icon name="invert-mode-outline" slot="start"></ion-icon>
+      Author: {{ quote?.author }}
+    </ion-item>
+
+    <ion-item lines="none" class="episode-card">
+      <ion-icon name="people-outline" slot="start"></ion-icon>
+      Series: {{ quote?.series }}
+    </ion-item>
+
+    <ion-item lines="none" class="episode-card">
+      <ion-icon name="people-outline" slot="start"></ion-icon>
+      Quote: {{ quote?.quote }}
+    </ion-item>
+
+  </ion-card>
 </ion-content>
