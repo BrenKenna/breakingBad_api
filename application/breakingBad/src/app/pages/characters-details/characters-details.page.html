@@ -17,35 +17,40 @@
  
 <ion-content padding="">
 
-  <ion-card *ngIf="character" class="episode-card">
+  <ion-card *ngIf="character" class="details-card">
 
-    <ion-card-header>Name: {{ character.name }}</ion-card-header>
+    <ion-card-header>
+      <ion-img style="height: 30%; width: 30%; margin: auto;" [src]="character.img"></ion-img>
+    </ion-card-header>
  
-    <ion-item lines="none" class="episode-card">
+    <ion-item lines="none" class="item-details">
+      Name: {{ character.name }}
+    </ion-item>
+    
+    <ion-item lines="none" class="item-details">
       <ion-icon name="snow-outline" slot="start"></ion-icon>
       Alias: {{ character.nickname }}
     </ion-item>
  
-    <ion-item lines="none" class="episode-card">
+    <ion-item lines="none" class="item-details">
       <ion-icon name="invert-mode-outline" slot="start"></ion-icon>
       Status: {{ character.status }}
     </ion-item>
 
-    <ion-item lines="none" class="episode-card">
+    <ion-item lines="none" class="item-details">
       <ion-icon name="people-outline" slot="start"></ion-icon>
       Performed By: {{ character.portrayed }}
     </ion-item>
 
-    <ion-item lines="none" class="episode-card">
+    <ion-item lines="none" class="item-details">
       <ion-icon name="resize-outline" slot="start"></ion-icon>
       Related Shows: {{ character.category }}
     </ion-item>
 
-    <ion-item lines="none" class="episode-card">
+    <ion-item lines="none" class="item-details">
       <ion-icon name="resize-outline" slot="start"></ion-icon>
       Appearances: {{ character?.appearance }}
     </ion-item>
 
   </ion-card>
-
 </ion-content>
