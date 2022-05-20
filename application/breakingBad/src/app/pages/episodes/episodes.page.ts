@@ -38,6 +38,11 @@ export class EpisodesPage implements OnInit {
     this.apiPath = queryAPI.getAPIPath("Episodes");
   }
 
+
+  /**
+   * Inititalize page with API results so that ngIf/ngFor directives are usable
+   *  by the related page.
+   */
   ngOnInit() {
 
     // Fetch api data and sanity check
