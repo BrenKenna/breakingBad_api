@@ -9,11 +9,15 @@ Design plan:
 
     b). Move onto page code
 
+    
+
 2. Add a little more to the view:
 
    a). Characters selection page show image, name & alias
 
    b). Episode selector shows season & episode number
+
+   
 
 3. Base theme off of the "***Breaking Bad***" theme dark greens, white font on black:
 
@@ -46,4 +50,10 @@ Design plan:
 
 5. Follow & try implement the pagination from the Sports Store from chapter 7
 
+   Decided against it because the app is quite "scrolly" anyway and technologies like DynamoDB use next tokens for fetching net ~4KB of data. Initial idea was to construct an instance of a "page" from the subscribed observable results. The page class would then have attributes for the size of the list of returned results and editable attribute for the number of items per page. Getters, settters would be used to guide user through content.
+
 ​	*https://github.com/Apress/pro-angular-9*
+
+6. Gitpod Script:
+
+   Decided to build the app from a blank angular project and so used the code from class, but never worked in my sessions. Given technologies like Terraform & preference for learning more/resources about angular opted for letting it slide.
