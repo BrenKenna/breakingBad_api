@@ -10,7 +10,7 @@
 
     <ion-list>
       <ion-item button detail lines="inset" *ngFor="let person of (persons | async)" (click)="openDetails(person)">
-        {{ person?.death }}
+        {{ person?.name }}
       </ion-item>
     </ion-list>
   </ion-list>

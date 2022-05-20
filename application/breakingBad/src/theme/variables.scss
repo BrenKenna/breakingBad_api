@@ -6,6 +6,10 @@
   --ion-text-color: rgb(234,241,230); // personally preferred over: rgb(227,235,202)
   --ion-tab-bar-background: var(--ion-color-primary);
 
+  ion-card-header {
+    --ion-text-color:rgb(227,235,202);   
+  }
+
   ion-tab-button {
     --color-selected: var(--ion-color-secondary);
   }

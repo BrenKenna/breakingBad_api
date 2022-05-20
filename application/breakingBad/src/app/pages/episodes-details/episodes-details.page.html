@@ -24,23 +24,20 @@
     <ion-card-header>Title: {{ episode.title }}</ion-card-header>
  
     <ion-item lines="none" class="item-details">
-      <ion-icon name="snow-outline" slot="start"></ion-icon>
-      Episode: {{ episode.episode }}
+      Season: {{ episode.season }}
     </ion-item>
  
     <ion-item lines="none" class="item-details">
-      <ion-icon name="invert-mode-outline" slot="start"></ion-icon>
-      Season: {{ episode.season }}
+      Episode: {{ episode.episode }}
     </ion-item>
 
     <ion-item lines="none" class="item-details">
-      <ion-icon class="icon-default" name="people-outline" slot="start"></ion-icon>
+      <ion-icon class="icon-default" name="calendar-number-outline" slot="start"></ion-icon>
       Air Date: {{ episode.air_date }}
     </ion-item>
 
     <ion-item lines="none" class="item-details">
-      <ion-icon class="icon-default" name="resize-outline" slot="start"></ion-icon>
-      Characters: {{ episode.characters }}
+      Characters: {{ episode.characters.toString().replace(",", ", ") }}
     </ion-item>
   </ion-card>
 </ion-content>

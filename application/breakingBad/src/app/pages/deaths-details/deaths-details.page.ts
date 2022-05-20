@@ -37,7 +37,7 @@ export class DeathsDetailsPage implements OnInit {
    * 
    */
   ngOnInit() {
-    this.personID = this.activatedRoute.snapshot.paramMap.get('id');
+    this.personID = this.activatedRoute.snapshot.paramMap.get('id').replace("/", "");
     this.queryAPI.getDeath(`${this.personID}`).subscribe(res => {
       this.person = res[0];
       console.dir(this.person, {depth: null});

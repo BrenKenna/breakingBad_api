@@ -39,7 +39,7 @@ export class DeathsPage implements OnInit {
   ngOnInit() {
 
     // Fetch api data and sanity check
-    this.persons = this.queryAPI.fetchDeaths();
+    this.persons = this.queryAPI.fetchCharacters();
 
     // Sanity check data is returned
     this.persons.subscribe(data => {
@@ -57,8 +57,9 @@ export class DeathsPage implements OnInit {
    * @param episode 
    */
   openDetails(person) {
-    let personID = person.death_id;
-    console.log(`Attempting to navigate to: ${this.tabPath}/${personID}`);
-    this.router.navigateByUrl(`${this.tabPath}/${personID}`);
+    let name = person.name;
+    console.log(`Attempting to navigate to: ${this.tabPath}/${name}`);
+    // console.dir(person, {depth: null});
+    this.router.navigateByUrl(`${this.tabPath}/${name}`);
   }
 }
